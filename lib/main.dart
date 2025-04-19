@@ -1,7 +1,8 @@
 // import 'package:finalpro/screens/user-panel/main-screen.dart';
-import 'package:finalpro/screens/auth-ui/sign-up-screen.dart';
+import 'package:finalpro/screens/auth-ui/splash-screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 
 import 'firebase_options.dart';
@@ -20,13 +21,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      debugShowCheckedModeBanner: false, // Remove this line for production
+      debugShowCheckedModeBanner: false,
+      // Remove this line for production
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const SignUpScreen(),
+      home: const SplashScreen(),
+      builder: EasyLoading.init(),
     );
   }
 }

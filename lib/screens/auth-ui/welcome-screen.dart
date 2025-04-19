@@ -1,10 +1,15 @@
+import 'package:finalpro/controllers/google-sign-in-controller.dart';
+import 'package:finalpro/screens/auth-ui/sign-in-screen.dart';
 import 'package:finalpro/utils/app-constant.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
 class WelcomeScreen extends StatelessWidget {
-  const WelcomeScreen({super.key});
+  WelcomeScreen({super.key});
+
+  final GoogelSignInController _googelSignInController =
+      Get.put(GoogelSignInController());
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +58,9 @@ class WelcomeScreen extends StatelessWidget {
                       "Sign in with Google",
                       style: TextStyle(color: AppConstant.appTextColor),
                     ),
-                    onPressed: () {}),
+                    onPressed: () {
+                      _googelSignInController.signInWithGoogle();
+                    }),
               ),
             ),
             // email
@@ -77,7 +84,9 @@ class WelcomeScreen extends StatelessWidget {
                       "Sign in with Email",
                       style: TextStyle(color: AppConstant.appTextColor),
                     ),
-                    onPressed: () {}),
+                    onPressed: () {
+                      Get.to(() => SignInScreen());
+                    }),
               ),
             )
           ],

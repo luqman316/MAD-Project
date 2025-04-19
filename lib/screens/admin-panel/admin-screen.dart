@@ -5,16 +5,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-// import 'package:flutter/material.dart.dart';
 
-class MainScreen extends StatelessWidget {
-  const MainScreen({super.key});
+class AdminMainScreen extends StatefulWidget {
+  const AdminMainScreen({super.key});
 
+  @override
+  State<AdminMainScreen> createState() => _AdminMainScreenState();
+}
+
+class _AdminMainScreenState extends State<AdminMainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        systemOverlayStyle: SystemUiOverlayStyle(
+         systemOverlayStyle: SystemUiOverlayStyle(
             statusBarColor: AppConstant.appSecondaryColor,
             statusBarIconBrightness: Brightness.light),
         backgroundColor: AppConstant.appMainColor,
@@ -34,9 +38,7 @@ class MainScreen extends StatelessWidget {
             ),
           ),
         ],
-        title: Text(AppConstant.appMainName),
-        titleTextStyle: TextStyle(
-            color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold),
+        title: Text('Admin Panel'),
       ),
     );
   }
