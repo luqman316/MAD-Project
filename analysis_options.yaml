@@ -10,6 +10,9 @@
 analyzer:
   errors:
     unused_field: ignore
+    no_leading_underscores_for_local_identifiers: ignore
+    avoid_unnecessary_containers: ignore
+    sized_box_for_whitespace: ignore
 include: package:flutter_lints/flutter.yaml
 
 linter:

@@ -1,0 +1,2 @@
+C:/Users/AIMS TECH/OneDrive/Desktop/University/6th semester/MAD-Theory/project/finalpro/android/app/.cxx/Debug/465j1d5r/x86_64/CMakeFiles/edit_cache.dir
+C:/Users/AIMS TECH/OneDrive/Desktop/University/6th semester/MAD-Theory/project/finalpro/android/app/.cxx/Debug/465j1d5r/x86_64/CMakeFiles/rebuild_cache.dir
