@@ -383,8 +383,7 @@ class _SignInScreenState extends State<SignInScreen> {
                           var userDoc = await getUserDataController
                               .getUserData(userCredential.user!.uid);
 
-                          if (userDoc.exists &&
-                              userDoc.get('isAdmin') == true) {
+                          if (userDoc['isAdmin'] == true) {
                             Get.snackbar(
                               "Success Admin Login",
                               "Login Successfully!",

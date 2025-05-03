@@ -1,4 +1,4 @@
-// ignore_for_file: must_be_immutable
+// ignore_for_file: file_names, unnecessary_import
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -8,17 +8,17 @@ import 'package:finalpro/utils/app-constant.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/utils.dart';
 import 'package:image_card/image_card.dart';
 
-class SingleCategoriesScree extends StatefulWidget {
-  String categoryId;
-  SingleCategoriesScree({super.key, required this.categoryId});
+class AllFlashSaleProduct extends StatefulWidget {
+  const AllFlashSaleProduct({super.key});
 
   @override
-  State<SingleCategoriesScree> createState() => _SingleCategoriesScreeState();
+  State<AllFlashSaleProduct> createState() => _AllFlashSaleProductState();
 }
 
-class _SingleCategoriesScreeState extends State<SingleCategoriesScree> {
+class _AllFlashSaleProductState extends State<AllFlashSaleProduct> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +28,7 @@ class _SingleCategoriesScreeState extends State<SingleCategoriesScree> {
         ),
         backgroundColor: AppConstant.appSecondaryColor,
         title: Text(
-          'Products',
+          'All Flash Sale Products',
           style: TextStyle(color: AppConstant.appTextColor),
         ),
         centerTitle: true,
@@ -36,7 +36,7 @@ class _SingleCategoriesScreeState extends State<SingleCategoriesScree> {
       body: FutureBuilder(
         future: FirebaseFirestore.instance
             .collection('products')
-            .where('categoryId', isEqualTo: widget.categoryId)
+            .where('isSale', isEqualTo: true)
             .get(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.hasError) {
@@ -56,7 +56,7 @@ class _SingleCategoriesScreeState extends State<SingleCategoriesScree> {
               snapshot.data == null ||
               snapshot.data!.docs.isEmpty) {
             return Center(
-              child: Text('No categories available'),
+              child: Text('No products available'),
             );
           }
           if (snapshot.data != null) {
@@ -70,44 +70,55 @@ class _SingleCategoriesScreeState extends State<SingleCategoriesScree> {
               physics: BouncingScrollPhysics(),
               shrinkWrap: true,
               itemBuilder: (context, index) {
-                final producyData = snapshot.data!.docs[index];
+                var productData = snapshot.data!.docs[index];
                 ProductModel productModel = ProductModel(
-                  productId: producyData['productId'],
-                  categoryId: producyData['categoryId'],
-                  productName: producyData['productName'],
-                  categoryName: producyData['categoryName'],
-                  salePrice: producyData['salePrice'],
-                  fullPrice: producyData['fullPrice'],
-                  productImages: producyData['productImages'],
-                  deliveryTime: producyData['deliveryTime'],
-                  isSale: producyData['isSale'],
-                  productDescription: producyData['productDescription'],
-                  createdAt: producyData['createdAt'],
-                  updatedAt: producyData['updatedAt'],
+                  productId: productData['productId'],
+                  categoryId: productData['categoryId'],
+                  productName: productData['productName'],
+                  categoryName: productData['categoryName'],
+                  salePrice: productData['salePrice'],
+                  fullPrice: productData['fullPrice'],
+                  productImages: productData['productImages'],
+                  deliveryTime: productData['deliveryTime'],
+                  isSale: productData['isSale'],
+                  productDescription: productData['productDescription'],
+                  createdAt: productData['createdAt'],
+                  updatedAt: productData['updatedAt'],
                 );
+                // CategoriesModel categoriesModel = CategoriesModel(
+                //   categoryId: doc['categoryId'] ?? '',
+                //   categoryImg: doc['categoryImg'] ?? '',
+                //   categoryName: doc['categoryName'] ?? '',
+                //   updatedAt: doc['updatedAt'],
+                //   createdAt: doc['createdAt'],
+                // );
                 return Row(
                   children: [
                     GestureDetector(
                       onTap: () => Get.to(() => ProductDetailScreen(
                             productModel: productModel,
                           )),
-                      child: Container(
-                        child: FillImageCard(
-                          heightImage: Get.height / 10,
-                          width: Get.width / 2.3,
-                          borderRadius: 20.0,
-                          imageProvider: CachedNetworkImageProvider(
-                            productModel.productImages[0],
-                            // categoriesModel.categoryName,
-                          ),
-                          title: Center(
-                            child: Text(
-                              productModel.productName,
-                              overflow: TextOverflow.ellipsis,
-                              style: TextStyle(fontSize: 12.0),
+                      child: Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Container(
+                          child: FillImageCard(
+                            heightImage: Get.height / 10,
+                            width: Get.width / 2.3,
+                            borderRadius: 20.0,
+                            imageProvider: CachedNetworkImageProvider(
+                              productModel.productImages[0],
+                              // categoriesModel.categoryName,
                             ),
+                            title: Center(
+                              child: Text(
+                                productModel.productName,
+                                overflow: TextOverflow.ellipsis,
+                                maxLines: 1,
+                                style: TextStyle(fontSize: 12.0),
+                              ),
+                            ),
+                            // footer: Text(''),
                           ),
-                          // footer: Text(''),
                         ),
                       ),
                     )

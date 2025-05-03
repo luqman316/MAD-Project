@@ -1,5 +1,6 @@
 // ignore_for_file: file_names, avoid_unnecessary_containers, prefer_const_constructors, prefer_const_literals_to_create_immutables, sized_box_for_whitespace
 import 'dart:async';
+
 import 'package:finalpro/controllers/get-user-data-controller.dart';
 import 'package:finalpro/screens/admin-panel/admin-screen.dart';
 import 'package:finalpro/screens/auth-ui/welcome-screen.dart';
@@ -33,7 +34,7 @@ class _SplashScreenState extends State<SplashScreen> {
           Get.put(GetUserDataController());
       var userData = await getUserDataController.getUserData(user!.uid);
 
-      if (userData['isAdmin'] == true) {
+      if (userData.exists && userData.get('isAdmin') == true) {
         Get.offAll(() => AdminMainScreen());
       } else {
         Get.offAll(() => MainScreen());

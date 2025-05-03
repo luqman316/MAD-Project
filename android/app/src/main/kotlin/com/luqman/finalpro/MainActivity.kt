@@ -1,4 +1,4 @@
-package com.example.finalpro
+package com.luqman.finalpro
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -41,48 +41,51 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyB1WGpbRqZUqqezsGT9alty1JY4iUGAjF8',
-    appId: '1:819445477129:web:f77a417dd9deb628fbadd8',
-    messagingSenderId: '819445477129',
-    projectId: 'easyshopping-8bd04',
-    authDomain: 'easyshopping-8bd04.firebaseapp.com',
-    storageBucket: 'easyshopping-8bd04.firebasestorage.app',
-    measurementId: 'G-CL9CHD5ZZ5',
+    apiKey: 'AIzaSyD2g8o7PsHqVd48zPE5LGof-Ri0mNB-Po4',
+    appId: '1:612160474920:web:d4677bc1c411d2544e8a1d',
+    messagingSenderId: '612160474920',
+    projectId: 'easyshopping-dcb82',
+    authDomain: 'easyshopping-dcb82.firebaseapp.com',
+    storageBucket: 'easyshopping-dcb82.firebasestorage.app',
+    measurementId: 'G-RV2TR4WMXP',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAjh8eBpM6jFThWAVV0rm2m6njJkF8nUXs',
-    appId: '1:819445477129:android:d506cd4e8fbda0c2fbadd8',
-    messagingSenderId: '819445477129',
-    projectId: 'easyshopping-8bd04',
-    storageBucket: 'easyshopping-8bd04.firebasestorage.app',
+    apiKey: 'AIzaSyCVlBtdygo4bHjsT8P87G7aNvz3twlTUJw',
+    appId: '1:612160474920:android:96878d5aeeaf913a4e8a1d',
+    messagingSenderId: '612160474920',
+    projectId: 'easyshopping-dcb82',
+    storageBucket: 'easyshopping-dcb82.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyAus4OsiHqQMEWyrUm1j0xS3EhKemvpc90',
-    appId: '1:819445477129:ios:e6953eda602503f0fbadd8',
-    messagingSenderId: '819445477129',
-    projectId: 'easyshopping-8bd04',
-    storageBucket: 'easyshopping-8bd04.firebasestorage.app',
+    apiKey: 'AIzaSyDxjNztn-08APNvly8wtqqhZnM2OBvYTXw',
+    appId: '1:612160474920:ios:bb2d29e0b309e20d4e8a1d',
+    messagingSenderId: '612160474920',
+    projectId: 'easyshopping-dcb82',
+    storageBucket: 'easyshopping-dcb82.firebasestorage.app',
+    iosClientId: '612160474920-vn1oklnsu3eh287q7l7s7mif6acbgkdq.apps.googleusercontent.com',
     iosBundleId: 'com.example.finalpro',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyAus4OsiHqQMEWyrUm1j0xS3EhKemvpc90',
-    appId: '1:819445477129:ios:e6953eda602503f0fbadd8',
-    messagingSenderId: '819445477129',
-    projectId: 'easyshopping-8bd04',
-    storageBucket: 'easyshopping-8bd04.firebasestorage.app',
+    apiKey: 'AIzaSyDxjNztn-08APNvly8wtqqhZnM2OBvYTXw',
+    appId: '1:612160474920:ios:bb2d29e0b309e20d4e8a1d',
+    messagingSenderId: '612160474920',
+    projectId: 'easyshopping-dcb82',
+    storageBucket: 'easyshopping-dcb82.firebasestorage.app',
+    iosClientId: '612160474920-vn1oklnsu3eh287q7l7s7mif6acbgkdq.apps.googleusercontent.com',
     iosBundleId: 'com.example.finalpro',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyB1WGpbRqZUqqezsGT9alty1JY4iUGAjF8',
-    appId: '1:819445477129:web:5be23867296fd276fbadd8',
-    messagingSenderId: '819445477129',
-    projectId: 'easyshopping-8bd04',
-    authDomain: 'easyshopping-8bd04.firebaseapp.com',
-    storageBucket: 'easyshopping-8bd04.firebasestorage.app',
-    measurementId: 'G-E4NNR89353',
+    apiKey: 'AIzaSyD2g8o7PsHqVd48zPE5LGof-Ri0mNB-Po4',
+    appId: '1:612160474920:web:ea0d0acb9851d60b4e8a1d',
+    messagingSenderId: '612160474920',
+    projectId: 'easyshopping-dcb82',
+    authDomain: 'easyshopping-dcb82.firebaseapp.com',
+    storageBucket: 'easyshopping-dcb82.firebasestorage.app',
+    measurementId: 'G-8KBLC59G3D',
   );
+
 }

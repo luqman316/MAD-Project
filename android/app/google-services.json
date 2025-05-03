@@ -1,26 +1,87 @@
 {
   "project_info": {
-    "project_number": "819445477129",
-    "project_id": "easyshopping-8bd04",
-    "storage_bucket": "easyshopping-8bd04.firebasestorage.app"
+    "project_number": "612160474920",
+    "project_id": "easyshopping-dcb82",
+    "storage_bucket": "easyshopping-dcb82.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:819445477129:android:d506cd4e8fbda0c2fbadd8",
+        "mobilesdk_app_id": "1:612160474920:android:96878d5aeeaf913a4e8a1d",
         "android_client_info": {
           "package_name": "com.example.finalpro"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "612160474920-ajep021thcsj3rvleemnmq0jh4lvlhn8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": "AIzaSyAjh8eBpM6jFThWAVV0rm2m6njJkF8nUXs"
+          "current_key": "AIzaSyCVlBtdygo4bHjsT8P87G7aNvz3twlTUJw"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "612160474920-ajep021thcsj3rvleemnmq0jh4lvlhn8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "612160474920-vn1oklnsu3eh287q7l7s7mif6acbgkdq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.finalpro"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:612160474920:android:65f93784ec02aee24e8a1d",
+        "android_client_info": {
+          "package_name": "com.luqman.finalpro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "612160474920-nsfo7nf9ckffpr52lb4vbvr450o4r873.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.luqman.finalpro",
+            "certificate_hash": "5436d6ec0c7b8b456cfe04aa397dcbb1eb34587a"
+          }
+        },
+        {
+          "client_id": "612160474920-ajep021thcsj3rvleemnmq0jh4lvlhn8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVlBtdygo4bHjsT8P87G7aNvz3twlTUJw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "612160474920-ajep021thcsj3rvleemnmq0jh4lvlhn8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "612160474920-vn1oklnsu3eh287q7l7s7mif6acbgkdq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.finalpro"
+              }
+            }
+          ]
         }
       }
     }
