@@ -20,6 +20,7 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   User? user = FirebaseAuth.instance.currentUser;
+
   @override
   void initState() {
     super.initState();
@@ -46,7 +47,6 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    //final size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: AppConstant.appSecondaryColor,
       appBar: AppBar(
@@ -71,7 +71,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 AppConstant.appPoweredBy,
                 style: TextStyle(
                     color: AppConstant.appTextColor,
-                    fontSize: 12.0,
+                    fontSize: 13.0,
                     fontWeight: FontWeight.bold),
               ),
             )
