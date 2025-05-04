@@ -5,11 +5,13 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:finalpro/models/cart-model.dart';
 import 'package:finalpro/models/product-model.dart';
+import 'package:finalpro/screens/user-panel/cart-screen.dart';
 import 'package:finalpro/utils/app-constant.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ProductDetailScreen extends StatefulWidget {
   ProductModel productModel;
@@ -34,6 +36,15 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
           ),
         ),
         centerTitle: true,
+        actions: [
+          GestureDetector(
+            onTap: () => Get.to(() => CartScreen()),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Icon(Icons.shopping_cart),
+            ),
+          ),
+        ],
       ),
       body: Container(
         child: Column(
@@ -149,7 +160,9 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                                         color: AppConstant.appTextColor),
                                   ),
                                   onPressed: () {
-                                    // Get.to(() => SignInScreen());
+                                    sendMessageOnWhatsapp(
+                                      productModel: widget.productModel,
+                                    );
                                   }),
                             ),
                           ),
@@ -189,6 +202,21 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
     );
   }
 
+  static Future<void> sendMessageOnWhatsapp({
+    required ProductModel productModel,
+  }) async {
+    final number = "+923221776069";
+    final message =
+        "Ecomm \n I want to know about this product\n ${productModel.productName} \n ${productModel.productId}";
+
+    final url = 'https://wa.me/$number?text=${Uri.encodeComponent(message)}';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
   // Check if the product already exists in the cart
   // If it does, show a message or update the quantity
   // If it doesn't, add it to the cart
@@ -216,7 +244,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
         "productQuantity": updatedQuantity,
         "productTotalPrice": totalPrice,
       });
-      print ("Product exists in  cart");
+      print("Product exists in  cart");
     } else {
       await FirebaseFirestore.instance.collection('cart').doc(uId).set({
         "uId": uId,
@@ -236,13 +264,12 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
         createdAt: DateTime.now(),
         updatedAt: DateTime.now(),
         productQuantity: quantityIncrement,
-        productTotalPrice:
-            double.parse(widget.productModel.salePrice != ""
-                ? widget.productModel.salePrice
-                : widget.productModel.fullPrice),
+        productTotalPrice: double.parse(widget.productModel.salePrice != ""
+            ? widget.productModel.salePrice
+            : widget.productModel.fullPrice),
       );
       await documentReference.set(cartModel.toMap());
-      print ("Product added to cart");
+      print("Product added to cart");
     }
   }
 }

@@ -29,7 +29,7 @@ class MainScreen extends StatelessWidget {
         systemOverlayStyle: SystemUiOverlayStyle(
             statusBarColor: AppConstant.appSecondaryColor,
             statusBarIconBrightness: Brightness.light),
-        backgroundColor: AppConstant.appMainColor,
+        backgroundColor: AppConstant.appSecondaryColor,
         title: Text(
           AppConstant.appMainName,
           style: TextStyle(color: AppConstant.appTextColor),

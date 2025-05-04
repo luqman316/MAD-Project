@@ -32,7 +32,7 @@ class AllProductScreen extends StatelessWidget {
         body: FutureBuilder(
           future: FirebaseFirestore.instance
               .collection('products')
-              .where('isSale', isEqualTo: false)
+              .where('isSale')
               .get(),
           builder:
               (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -83,17 +83,12 @@ class AllProductScreen extends StatelessWidget {
                     createdAt: productData['createdAt'],
                     updatedAt: productData['updatedAt'],
                   );
-                  // CategoriesModel categoriesModel = CategoriesModel(
-                  //   categoryId: doc['categoryId'] ?? '',
-                  //   categoryImg: doc['categoryImg'] ?? '',
-                  //   categoryName: doc['categoryName'] ?? '',
-                  //   updatedAt: doc['updatedAt'],
-                  //   createdAt: doc['createdAt'],
-                  // );
+
                   return Row(
                     children: [
                       GestureDetector(
-                        onTap: () => Get.to(() => ProductDetailScreen(productModel: productModel)),
+                        onTap: () => Get.to(() =>
+                            ProductDetailScreen(productModel: productModel)),
                         child: Padding(
                           padding: EdgeInsets.all(8.0),
                           child: Container(

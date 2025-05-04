@@ -1,6 +1,9 @@
 // ignore_for_file: sort_child_properties_last
 
 import 'package:finalpro/screens/auth-ui/welcome-screen.dart';
+import 'package:finalpro/screens/user-panel/all-order-screen.dart';
+import 'package:finalpro/screens/user-panel/all-product-screen.dart';
+import 'package:finalpro/screens/user-panel/main-screen.dart';
 import 'package:finalpro/utils/app-constant.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -65,6 +68,11 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                 title: Text('Home'),
                 leading: Icon(Icons.home),
                 trailing: Icon(Icons.arrow_forward),
+                onTap: () {
+                  Get.back();
+                  Get.to(() =>
+                      MainScreen()); // Replace with your actual screen class
+                },
               ),
             ),
             Padding(
@@ -74,6 +82,11 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                 title: Text('Products'),
                 leading: Icon(Icons.production_quantity_limits),
                 trailing: Icon(Icons.arrow_forward),
+                onTap: () {
+                  Get.back();
+                  Get.to(() =>
+                      AllProductScreen()); // Replace with your actual screen class
+                },
               ),
             ),
             Padding(
@@ -83,6 +96,10 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                 title: Text('Orders'),
                 leading: Icon(Icons.shopping_bag),
                 trailing: Icon(Icons.arrow_forward),
+                onTap: () {
+                  Get.back();
+                  Get.to(() => AllOrderScreen());
+                },
               ),
             ),
             Padding(
